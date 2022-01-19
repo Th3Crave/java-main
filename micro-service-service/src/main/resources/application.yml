@@ -1,0 +1,41 @@
+# SPRING BOOT PROPERTIES
+
+spring:
+
+  # IDENTITY (ContextIdApplicationContextInitializer)
+  application:
+    name: micro-service
+
+  # PROFILES
+  profiles:
+    active: dev
+
+  # JMX
+  jmx:
+    enabled: false
+
+# ----------------------------------------
+# WEB PROPERTIES
+# ----------------------------------------
+server:
+  port: 8080
+
+# ----------------------------------------
+# ACTUATOR PROPERTIES
+# ----------------------------------------
+# MANAGEMENT HTTP SERVER (ManagementServerProperties)
+management:
+  # ENDPOINTS WEB CONFIGURATION (WebEndpointProperties)
+  endpoints:
+    web:
+      exposure:
+        include: 'prometheus'
+
+# --------------
+# Mybatis-Plus
+# --------------
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: false
