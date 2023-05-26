@@ -4,7 +4,7 @@ spring:
 
   # IDENTITY (ContextIdApplicationContextInitializer)
   application:
-    name: micro-service
+    name: java-main
 
   # PROFILES
   profiles:

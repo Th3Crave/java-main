@@ -43,9 +43,3 @@ feign:
     connection-timeout: 2000
     follow-redirects: true
     disable-ssl-validation: false
-
-# 用户自定义事件 https://x-docs.haier.net/#/console/alert/custom_event
-eventclient:
-  serverAddress: http://alertproxy-dev.qd-ctcc.haier.net/api/v1/events
-  sendInterval: 30
-  sameSendInterval: 300
