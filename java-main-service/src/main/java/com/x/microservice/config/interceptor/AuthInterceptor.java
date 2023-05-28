@@ -14,11 +14,12 @@ public class AuthInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String userAccount = request.getHeader("X-USER");
-        if (userAccount == null || userAccount.equals("")) {
-            throw new Exception("user not login");
-        }
-        log.info("AuthInterceptor x-user:{}", userAccount);
+//        String userAccount = request.getHeader("X-USER");
+//        if (userAccount == null || userAccount.equals("")) {
+//            throw new Exception("user not login");
+//        }
+//        log.info("AuthInterceptor x-user:{}", userAccount);
+        log.info("AuthInterceptor");
         return true;
     }
 }
