@@ -14,6 +14,10 @@ spring:
   jmx:
     enabled: false
 
+  # AOP代理
+  aop:
+    proxy-target-class: false
+
 # ----------------------------------------
 # WEB PROPERTIES
 # ----------------------------------------

@@ -6,11 +6,13 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 
 @org.springframework.boot.autoconfigure.SpringBootApplication
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@ComponentScan("com.x.microservice")
+@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 @EnableAspectJAutoProxy
 public class SpringBootApplication {
 //    public static void main(String[] args) {

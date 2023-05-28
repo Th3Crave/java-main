@@ -3,7 +3,7 @@ package com.feng.proxy.dynamic.cglib.demo1;
 import java.util.Collections;
 import java.util.List;
 
-public class UserServiceImpl {
+public class UserService {
 
     /**
      * find user list.
