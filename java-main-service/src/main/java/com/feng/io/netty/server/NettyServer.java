@@ -1,4 +1,4 @@
-package com.feng.io.netty;
+package com.feng.io.netty.server;
 
 
 // https://github.com/fuzhengwei/itstack-demo-netty.git
