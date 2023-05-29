@@ -4,7 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+// 默认为true，为bean创建代理
+@Configuration(proxyBeanMethods = false)
 @Slf4j
 public class MyAopTestConfiguration {
 

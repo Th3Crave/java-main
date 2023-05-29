@@ -56,6 +56,14 @@
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
         </dependency>
+        <!-- cglib -->
+
+        <!-- Netty4.1 -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+        </dependency>
+        <!-- Netty4.1 -->
 
     </dependencies>
 
