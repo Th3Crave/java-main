@@ -25,12 +25,24 @@ public class NettyServer {
         // EventLoopGroup事件循环组
         //  NioEventLoopGroup异步事件循环组
         //  MultithreadEventLoopGroup多线程事件循环组等。
-        EventLoopGroup parentGroup = new NioEventLoopGroup();
-        EventLoopGroup childGroup = new NioEventLoopGroup();
+        EventLoopGroup bossGroup = new NioEventLoopGroup();
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
+
+        /**
+         * 每个 Boss NioEventLoop 循环执行的任务包含 3 步：
+         * 1）轮询 Accept 事件；
+         * 2）处理 Accept I/O 事件，与 Client 建立连接，生成 NioSocketChannel，并将 NioSocketChannel 注册到某个 Worker NioEventLoop 的 Selector 上；
+         * 3）处理任务队列中的任务，runAllTasks。任务队列中的任务包括用户调用 eventloop.execute 或 schedule 执行的任务，或者其他线程提交到该 eventloop 的任务。
+         *
+         * 每个 Worker NioEventLoop 循环执行的任务包含 3 步：
+         * 1）轮询 Read、Write 事件；
+         * 2）处理 I/O 事件，即 Read、Write 事件，在 NioSocketChannel 可读、可写事件发生时进行处理；
+         * 3）处理任务队列中的任务，runAllTasks。
+         */
 
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
-            bootstrap.group(parentGroup, childGroup) // parentGroup主要用于接收请求链接，链接成功后交给childGroup处理收发数据等事件
+            bootstrap.group(bossGroup, workerGroup) // 主从Reactor多线程模型 bossGroup主要用于接收请求链接，链接成功后交给workerGroup处理收发数据等事件
                     .channel(NioServerSocketChannel.class) // 非阻塞模式
                     .option(ChannelOption.SO_BACKLOG, 128)
                     .childHandler(new MyChannelInitializer());
@@ -45,8 +57,8 @@ public class NettyServer {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            childGroup.shutdownGracefully();
-            parentGroup.shutdownGracefully();
+            workerGroup.shutdownGracefully();
+            bossGroup.shutdownGracefully();
         }
     }
 }
