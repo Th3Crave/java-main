@@ -4,7 +4,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelOutboundHandlerAdapter;
 import io.netty.channel.ChannelPromise;
 
-public class MyOutMsgHandler extends ChannelOutboundHandlerAdapter {
+public class MyClientOutMsgHandler extends ChannelOutboundHandlerAdapter {
 
     @Override
     public void read(ChannelHandlerContext ctx) throws Exception {

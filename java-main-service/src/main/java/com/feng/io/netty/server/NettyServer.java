@@ -21,12 +21,16 @@ public class NettyServer {
     private void bing(int port) {
         // 配置服务端NIO线程组
         //NioEventLoopGroup extends MultithreadEventLoopGroup Math.max(1, SystemPropertyUtil.getInt("io.netty.eventLoopThreads", NettyRuntime.availableProcessors() * 2));
+
+        // EventLoopGroup事件循环组
+        //  NioEventLoopGroup异步事件循环组
+        //  MultithreadEventLoopGroup多线程事件循环组等。
         EventLoopGroup parentGroup = new NioEventLoopGroup();
         EventLoopGroup childGroup = new NioEventLoopGroup();
 
         try {
             ServerBootstrap bootstrap = new ServerBootstrap();
-            bootstrap.group(parentGroup, childGroup)
+            bootstrap.group(parentGroup, childGroup) // parentGroup主要用于接收请求链接，链接成功后交给childGroup处理收发数据等事件
                     .channel(NioServerSocketChannel.class) // 非阻塞模式
                     .option(ChannelOption.SO_BACKLOG, 128)
                     .childHandler(new MyChannelInitializer());

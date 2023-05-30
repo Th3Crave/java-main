@@ -24,7 +24,7 @@ public class MyChannelInitializer extends ChannelInitializer<SocketChannel> {
 
         // 在管道中添加我们自己的接收数据实现方法
         // 消息出站处理器，在client发送消息时候会触发此处理器
-        socketChannel.pipeline().addLast(new MyOutMsgHandler());
+        socketChannel.pipeline().addLast(new MyClientOutMsgHandler());
         // 消息入站处理器
         socketChannel.pipeline().addLast(new MyClientInMsgHandler());
     }
