@@ -23,6 +23,7 @@ public class BioServer extends Thread {
             System.out.println("this is BioServer, start! " + this.serverSocket.getInetAddress());
             while (true) {
                 Socket socket = serverSocket.accept();
+                // BIO时 服务端处理客户端连接的时候 一个客户端连接相应的需要一个线程处理
                 BioServerHandler bioServerHandler = new BioServerHandler(socket, Charset.forName("GBK"));
                 bioServerHandler.start();
             }

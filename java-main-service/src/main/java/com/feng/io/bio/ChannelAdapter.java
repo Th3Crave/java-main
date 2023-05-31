@@ -25,6 +25,7 @@ public abstract class ChannelAdapter extends Thread {
 
     @Override
     public void run() {
+        System.out.println(Thread.currentThread().getName());
         try {
             BufferedReader input = new BufferedReader(new InputStreamReader(this.socket.getInputStream(), charset));
             String str = null;
