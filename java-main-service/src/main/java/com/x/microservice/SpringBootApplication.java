@@ -1,5 +1,6 @@
 package com.x.microservice;
 
+import com.x.microservice.aop.reflect.ChildClass;
 import com.x.microservice.service.TestCglibProxyService;
 import com.x.microservice.service.TestJdkProxyService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -29,7 +30,10 @@ public class SpringBootApplication {
 
 
         TestCglibProxyService testCglibProxyService = app.getBean(TestCglibProxyService.class);
-        testCglibProxyService.test();
+        // 测试反射获取父类的私有属性
+        ChildClass childClass = new ChildClass();
+        childClass.setSuperName("super");
+        testCglibProxyService.test(childClass);
 
         TestJdkProxyService testJdkProxyService = (TestJdkProxyService) app.getBean("testJdkProxyService");
         testJdkProxyService.test();
