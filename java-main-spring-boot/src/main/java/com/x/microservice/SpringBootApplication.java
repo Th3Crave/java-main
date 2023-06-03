@@ -17,6 +17,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @org.springframework.boot.autoconfigure.SpringBootApplication
 @ComponentScan("com.x.microservice")
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, RedissonAutoConfiguration.class, RedisAutoConfiguration.class})
+//@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 @EnableAspectJAutoProxy
 public class SpringBootApplication {
     public static void main1(String[] args) {
