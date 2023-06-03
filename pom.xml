@@ -34,8 +34,6 @@
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
         <mybatis-plus.version>3.4.0</mybatis-plus.version>
         <mysql-connector-java.version>8.0.22</mysql-connector-java.version>
-        <spring-cloud-starter-openfeign.version>2.2.5.RELEASE</spring-cloud-starter-openfeign.version>
-        <feign-okhttp.version>11.0</feign-okhttp.version>
         <lombok.version>1.18.12</lombok.version>
 
         <cglib.version>3.3.0</cglib.version>
@@ -69,18 +67,6 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
                 <scope>runtime</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-openfeign</artifactId>
-                <version>${spring-cloud-starter-openfeign.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.github.openfeign</groupId>
-                <artifactId>feign-okhttp</artifactId>
-                <version>${feign-okhttp.version}</version>
             </dependency>
 
             <dependency>

@@ -3,8 +3,8 @@ logging:
   level:
     root: INFO
 
-# DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
 spring:
+  # 数据库 DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://10.138.228.243:3306/demo?autoReconnect=true&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
@@ -23,6 +23,16 @@ spring:
         useServerPrepStmts: true
       max-lifetime: 570000
       idle-timeout: 500000
+  # redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123
+    database: 15
+#    # redis集群
+#    cluster:
+#      nodes: 1.1.1.1:6379, 1.1.1.1:6379, 1.1.1.1:6379, 1.1.1.1:6379, 1.1.1.1:6379
+
 
 # Feign
 feign:
