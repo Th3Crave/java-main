@@ -79,6 +79,13 @@
         </dependency>
         <!--    openfeign    -->
 
+        <!--    spring-boot-starter-logging    -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+        <!--    spring-boot-starter-logging    -->
+
 
     </dependencies>
 
