@@ -31,7 +31,7 @@
 
         <project.version>1.0.0-SNAPSHOT</project.version>
         <spring-boot-starter-parent.version>2.3.4.RELEASE</spring-boot-starter-parent.version>
-        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <spring-cloud.version>2021.0.6</spring-cloud.version>
         <mybatis-plus.version>3.4.0</mybatis-plus.version>
         <mysql-connector-java.version>8.0.22</mysql-connector-java.version>
         <lombok.version>1.18.12</lombok.version>
