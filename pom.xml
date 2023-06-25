@@ -98,7 +98,7 @@
         <repository>
             <id>maven-aliyun</id>
             <name>maven-aliyun</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
