@@ -63,6 +63,15 @@ public class LRUCache_LinkedHashMap {
     public void put(int key, int value) {
         cache.put(key, value);
     }
+
+    public static void main(String[] args) {
+        LRUCache_LinkedHashMap lruCache = new LRUCache_LinkedHashMap(2);
+        lruCache.put(1, 1);
+        lruCache.put(2, 2);
+        System.out.println(lruCache.get(1));
+        lruCache.put(3, 3);
+        System.out.println(lruCache.get(2));
+    }
 }
 
 /**
