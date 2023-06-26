@@ -48,6 +48,7 @@ public class LRUCache_LinkedHashMap {
          *  }
          */
         cache = new LinkedHashMap<Integer, Integer>(capacity, 0.75f, true) {
+            // 当Entry个数超过cache的size时，删除最老的Entry
             @Override
             protected boolean removeEldestEntry(Map.Entry eldest) {
                 return cache.size() > capacity;
