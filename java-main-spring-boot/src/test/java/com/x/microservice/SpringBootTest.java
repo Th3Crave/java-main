@@ -1,6 +1,6 @@
 package com.x.microservice;
 
-import com.x.microservice.redis.RedissonLock;
+import com.x.microservice.async.AsyncService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -9,8 +9,8 @@ public class SpringBootTest {
 
     //    @Autowired
 //    private RedisDistributedLock_lua redisDistributedLockLua;
-    @Autowired
-    private RedissonLock redissonLock;
+//    @Autowired
+//    private RedissonLock redissonLock;
 
 //    @Test
 //    public void testLock() {
@@ -22,14 +22,23 @@ public class SpringBootTest {
 //        redisDistributedLockLua.unlock("test", "test");
 //    }
 
-    @Test
-    public void testRedissonLock() {
-        redissonLock.lock("test", 10000);
+//    @Test
+//    public void testRedissonLock() {
+//        redissonLock.lock("test", 10000);
+////        redissonLock.unlock("test");
+//    }
+//
+//    @Test
+//    public void testRedissonUnlock() {
 //        redissonLock.unlock("test");
-    }
+//    }
+
+
+    @Autowired
+    private AsyncService asyncService;
 
     @Test
-    public void testRedissonUnlock() {
-        redissonLock.unlock("test");
+    public void testAsync() {
+        asyncService.testCompletableFuture();
     }
 }

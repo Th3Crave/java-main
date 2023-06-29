@@ -13,9 +13,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 
 @org.springframework.boot.autoconfigure.SpringBootApplication
+@EnableAsync
 @EnableFeignClients(basePackages = {"com.x.microservice.feign"})
 @ComponentScan("com.x.microservice")
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, RedissonAutoConfiguration.class, RedisAutoConfiguration.class})
