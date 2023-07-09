@@ -1,8 +1,11 @@
 package com.x.microservice;
 
 import com.x.microservice.async.AsyncService;
+import com.x.microservice.spi.IUser;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ServiceLoader;
 
 @org.springframework.boot.test.context.SpringBootTest
 public class SpringBootTest {
@@ -41,4 +44,13 @@ public class SpringBootTest {
     public void testAsync() {
         asyncService.testCompletableFuture();
     }
+
+
+    @Test
+    public void testSPI() {
+        ServiceLoader<IUser> serviceLoader = ServiceLoader.load(IUser.class);
+        serviceLoader.forEach(IUser::showName);
+    }
+
+
 }
